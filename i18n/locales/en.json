@@ -1,0 +1,17 @@
+{
+  "sign_in_banner": "sign in to your account",
+  "sign_in": "sign in",
+  "username": "username",
+  "password": "password",
+  "forgot_password": "forgot password",
+  "remember_me": "remember me",
+  "sign_up_banner": "sign up for a new account",
+  "sign_up": "sign up",
+  "first_name": "first name",
+  "last_name": "last name",
+  "email": "email",
+  "create_account": "create account",
+  "already_have_an_account": "already have an account? sign in",
+  "login_status":"login successfully"
+  
+}

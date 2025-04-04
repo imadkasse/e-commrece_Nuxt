@@ -1,0 +1,16 @@
+{
+  "sign_in_banner": "سجل الدخول إلى حسابك",
+  "sign_in": "دخول",
+  "username": "إسم المستخدم",
+  "password": "كلمة المرور",
+  "forgot_password": "نسيت كلمة المرور",
+  "remember_me": "تذكرني",
+  "sign_up_banner": "سجل جديدا",
+  "sign_up": "تسجيل",
+  "first_name": "الإسم الأول",
+  "last_name": "الإسم الأخير",
+  "email": "البريد الإلكتروني",
+  "create_account": "أنشئ حساب",
+  "already_have_an_account": "لدي حساب",
+  "login_status":"تم تسجيل الدخول بنجاح"
+}

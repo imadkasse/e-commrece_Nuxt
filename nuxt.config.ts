@@ -13,6 +13,9 @@ export default defineNuxtConfig({
   },
   app: {
     pageTransition: true,
+    head:{
+      
+    }
   },
   runtimeConfig: {
     public: {

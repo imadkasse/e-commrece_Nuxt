@@ -1,7 +1,7 @@
 <script lang="ts" setup></script>
 
 <template>
-  <div class="container mx-auto">
+  <div class="container mx-auto ">
     <slot />
   </div>
 </template>

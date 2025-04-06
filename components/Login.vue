@@ -35,9 +35,9 @@ const handelLogin = async () => {
 };
 </script>
 <template>
-  <div class="grid grid-cols-7 h-screen" :dir="locale === 'ar' ? 'rtl' : 'ltr'">
+  <div class="grid grid-cols-7 " :dir="locale === 'ar' ? 'rtl' : 'ltr'">
     <section class="lg:col-span-3 col-span-7 bg-white">
-      <div class="py-12 px-12">
+      <div class="py-2 px-2">
         <h1
           class="text-slate-800 text-3xl font-extrabold ltr:first-letter:uppercase"
         >

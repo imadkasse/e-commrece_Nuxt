@@ -1,6 +1,6 @@
-<script lang="ts" setup>
-</script>
+<script lang="ts" setup></script>
 
 <template>
-  <h1>hello word < home page ></h1>
+  <HomeHeader />
+  <HomeBestSellProducts />
 </template>

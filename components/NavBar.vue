@@ -89,7 +89,7 @@ onMounted(() => {
             >
           </div>
         </ul>
-        <div class="flex gap-3">
+        <div class="flex items-center gap-3">
           <div class="relative">
             <input
               type="search"
@@ -117,12 +117,12 @@ onMounted(() => {
               </svg>
             </div>
           </div>
-          <button class="">
+          <NuxtLink to="/favorites" class="">
             <Heart :size="24" />
-          </button>
-          <button class="">
+          </NuxtLink>
+          <NuxtLink to="/cart" class="">
             <ShoppingCart :size="24" />
-          </button>
+          </NuxtLink>
           <div class="relative">
             <button
               :class="isOpen ? `bg-secondary rounded-full p-2 ` : ` p-2`"

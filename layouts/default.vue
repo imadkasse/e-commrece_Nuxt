@@ -2,7 +2,7 @@
 
 <template>
   <NavBar />
-  <div class="container mx-auto">
+  <div class="container mx-auto mt-24">
     <slot />
   </div>
   <Footer />

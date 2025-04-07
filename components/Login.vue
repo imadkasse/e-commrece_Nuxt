@@ -26,7 +26,6 @@ const handelLogin = async () => {
     setUser(res.data.data.user);
 
     await router.push("/profile");
-
   } catch (error) {
     //@ts-expect-error:fix agin
     const errorMessage = error?.response?.data?.message || "حدث خطأ غير متوقع!";
@@ -35,8 +34,18 @@ const handelLogin = async () => {
 };
 </script>
 <template>
-  <div class="grid grid-cols-7 " :dir="locale === 'ar' ? 'rtl' : 'ltr'">
-    <section class="lg:col-span-3 col-span-7 bg-white">
+  <div class="grid grid-cols-7 my-24">
+    <div class="lg:col-span-4 border xs:hidden">
+      <NuxtImg
+        src="/imgs/signup&login/img.png"
+        :alt="`Ecommerce`"
+        class="object-cover w-full h-full z-0"
+      />
+    </div>
+    <section
+      class="lg:col-span-3 col-span-7 bg-white"
+      :dir="locale === 'ar' ? 'rtl' : 'ltr'"
+    >
       <div class="py-2 px-2">
         <h1
           class="text-slate-800 text-3xl font-extrabold ltr:first-letter:uppercase"
@@ -44,7 +53,7 @@ const handelLogin = async () => {
           {{ t("sign_in_banner") }}
         </h1>
         <form @submit.prevent="handelLogin">
-          <div class="mt-12">
+          <div class="mt-5">
             <label
               for="email"
               class="block text-sm/6 font-semibold text-gray-900 capitalize"
@@ -61,7 +70,7 @@ const handelLogin = async () => {
               />
             </div>
           </div>
-          <div class="mt-12">
+          <div class="mt-5">
             <label
               for="password"
               class="block text-sm/6 font-semibold text-gray-900 capitalize"
@@ -77,7 +86,7 @@ const handelLogin = async () => {
               />
             </div>
           </div>
-          <div class="mt-12">
+          <div class="mt-5">
             <div class="grid grid-cols-2">
               <div>
                 <input type="checkbox" name="remember-me" id="remember-me" />
@@ -90,13 +99,13 @@ const handelLogin = async () => {
               <div class="ltr:text-right rtl:text-left">
                 <NuxtLink
                   href="/"
-                  class="text-sm font-medium text-green-600 ltr:first-letter:uppercase"
+                  class="text-sm font-medium text-secondary ltr:first-letter:uppercase"
                   >{{ t("forgot_password") }}</NuxtLink
                 >
               </div>
             </div>
           </div>
-          <div class="mt-12">
+          <div class="mt-5">
             <div class="">
               <NuxtLink
                 to="/signup"
@@ -108,7 +117,7 @@ const handelLogin = async () => {
           </div>
           <div class="mt-12">
             <button
-              class="w-full bg-primary py-3 font-medium text-lg text-white rounded-md hover:bg-secondary ltr:first-letter:uppercase"
+              class="w-full bg-secondary transition duration-200 py-3 font-medium text-lg text-white rounded-md hover:bg-hoverBtn ltr:first-letter:uppercase"
             >
               {{ t("sign_in") }}
             </button>
@@ -117,12 +126,5 @@ const handelLogin = async () => {
       </div>
       <LangSwitcher />
     </section>
-    <div class="col-span-4 sm:hidden lg:block">
-      <img
-        :src="`https://static.vecteezy.com/system/resources/thumbnails/005/879/539/small_2x/cloud-computing-modern-flat-concept-for-web-banner-design-man-enters-password-and-login-to-access-cloud-storage-for-uploading-and-processing-files-illustration-with-isolated-people-scene-free-vector.jpg`"
-        :alt="`Ecommerce`"
-        class="object-cover h-full z-0"
-      />
-    </div>
   </div>
 </template>

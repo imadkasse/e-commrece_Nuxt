@@ -1,4 +1,13 @@
 <script lang="ts" setup>
+import {
+  CircleX,
+  Heart,
+  LogOut,
+  ShoppingBag,
+  ShoppingCart,
+  Star,
+  User,
+} from "lucide-vue-next";
 import { useWebsiteStore } from "~/stores/webSiteInfo";
 
 const router = useRouter();
@@ -17,6 +26,10 @@ const setTheme = () => {
     ? document.body.classList.add("dark")
     : document.body.classList.remove("dark");
 };
+const isOpen = ref(false);
+const handelSetOpen = () => {
+  isOpen.value = !isOpen.value;
+};
 onMounted(() => {
   theme.value === "dark"
     ? document.body.classList.add("dark")
@@ -25,13 +38,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="border-b-2">
+  <div class="border-b-2 fixed w-full top-0 z-20 bg-white">
     <div class="p-4">
       <div class="flex items-center justify-around w-full">
         <h1 class="font-bold text-2xl">Exclusive</h1>
 
         <ul
-          class="md:flex hidden flex-col p-4 md:p-0 mt-4 border  border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0"
+          class="md:flex hidden flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0"
         >
           <li>
             <NuxtLink
@@ -76,7 +89,7 @@ onMounted(() => {
             >
           </div>
         </ul>
-        <div class="flex gap-1">
+        <div class="flex gap-3">
           <div class="relative">
             <input
               type="search"
@@ -105,11 +118,60 @@ onMounted(() => {
             </div>
           </div>
           <button class="">
-            <IconsHeart width="24" height="24" />
+            <Heart :size="24" />
           </button>
           <button class="">
-            <IconsShopCart width="24" height="24" />
+            <ShoppingCart :size="24" />
           </button>
+          <div class="relative">
+            <button
+              :class="isOpen ? `bg-secondary rounded-full p-2 ` : ` p-2`"
+              @click="handelSetOpen"
+            >
+              <User :size="24" :color="isOpen ? 'white' : 'black'" />
+            </button>
+            <div
+              v-if="isOpen"
+              class="absolute z-10 w-[225px] h-[208px] bg-[rgba(0,0,0,0.3)] backdrop-blur-md top-10 right-0 rounded"
+            >
+              <ul class="flex flex-col gap-3 p-6">
+                <li class="">
+                  <NuxtLink to="/profile" class="flex items-center gap-5">
+                    <User :size="24" color="white" />
+                    <p class="text-white font-light text-sm">
+                      Manage My Account
+                    </p>
+                  </NuxtLink>
+                </li>
+                <li class="">
+                  <NuxtLink to="/profile" class="flex items-center gap-5">
+                    <ShoppingBag :size="24" color="white" />
+                    <p class="text-white font-light text-sm">My Order</p>
+                  </NuxtLink>
+                </li>
+                <li class="">
+                  <NuxtLink to="/profile" class="flex items-center gap-5">
+                    <CircleX :size="24" color="white" />
+                    <p class="text-white font-light text-sm">
+                      My Cancellations
+                    </p>
+                  </NuxtLink>
+                </li>
+                <li class="">
+                  <NuxtLink to="/profile" class="flex items-center gap-5">
+                    <Star :size="24" color="white" />
+                    <p class="text-white font-light text-sm">My Reviews</p>
+                  </NuxtLink>
+                </li>
+                <li class="">
+                  <NuxtLink to="/profile" class="flex items-center gap-5">
+                    <LogOut :size="24" color="white" />
+                    <p class="text-white font-light text-sm">Logout</p>
+                  </NuxtLink>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <!-- dark and light mode switcher  -->

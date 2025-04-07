@@ -1,7 +1,9 @@
 <script lang="ts" setup></script>
 
 <template>
-  <div class="container mx-auto ">
+  <NavBar />
+  <div class="container mx-auto">
     <slot />
   </div>
+  <Footer />
 </template>

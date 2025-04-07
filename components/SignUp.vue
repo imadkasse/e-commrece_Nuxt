@@ -1,6 +1,16 @@
 <template>
-  <div class="grid grid-cols-7 h-screen" :dir="locale === 'ar' ? 'rtl' : 'ltr'">
-    <section class="lg:col-span-3 col-span-7 bg-white">
+  <div class="grid grid-cols-7 my-24">
+    <div class="lg:col-span-4 border xs:hidden">
+      <NuxtImg
+        src="/imgs/signup&login/img.png"
+        :alt="`Ecommerce`"
+        class="object-cover w-full h-full z-0"
+      />
+    </div>
+    <section
+      class="lg:col-span-3 col-span-7 bg-white"
+      :dir="locale === 'ar' ? 'rtl' : 'ltr'"
+    >
       <div class="py-2 px-2">
         <h1
           class="text-slate-800 text-3xl font-extrabold ltr:first-letter:uppercase"
@@ -8,7 +18,7 @@
           {{ t("sign_up_banner") }}
         </h1>
         <form @submit.prevent="submit">
-          <div class="mt-12">
+          <div class="mt-5">
             <label
               for="first_name"
               class="block text-sm/6 font-semibold text-gray-900 capitalize"
@@ -25,7 +35,7 @@
               />
             </div>
           </div>
-          <div class="mt-12">
+          <div class="mt-5">
             <label
               for="last_name"
               class="block text-sm/6 font-semibold text-gray-900 capitalize"
@@ -41,7 +51,7 @@
               />
             </div>
           </div>
-          <div class="mt-12">
+          <div class="mt-5">
             <div class="grid grid-cols-2">
               <div>
                 <input type="checkbox" name="remember-me" id="remember-me" />
@@ -54,25 +64,15 @@
               <div class="ltr:text-right rtl:text-left">
                 <NuxtLink
                   to="/login"
-                  class="text-sm font-medium text-green-600 ltr:first-letter:uppercase"
+                  class="text-sm font-medium text-secondary ltr:first-letter:uppercase"
                   >{{ t("already_have_an_account") }}</NuxtLink
                 >
               </div>
             </div>
           </div>
           <div class="mt-12">
-            <div class="">
-              <NuxtLink
-                to="/login"
-                class="text-gray-400 hover:text-gray-600 transition duration-200"
-              >
-                {{ t("already_have_an_account") }}
-              </NuxtLink>
-            </div>
-          </div>
-          <div class="mt-12">
             <button
-              class="w-full bg-primary py-3 font-medium text-lg text-white rounded-md hover:bg-secondary ltr:first-letter:uppercase"
+              class="w-full bg-secondary transition duration-200 py-3 font-medium text-lg text-white rounded-md hover:bg-hoverBtn ltr:first-letter:uppercase"
             >
               {{ t("sign_in") }}
             </button>
@@ -81,13 +81,6 @@
       </div>
       <LangSwitcher />
     </section>
-    <div class="lg:col-span-4 xs:hidden">
-      <img
-        :src="`https://static.vecteezy.com/system/resources/thumbnails/005/879/539/small_2x/cloud-computing-modern-flat-concept-for-web-banner-design-man-enters-password-and-login-to-access-cloud-storage-for-uploading-and-processing-files-illustration-with-isolated-people-scene-free-vector.jpg`"
-        :alt="`Ecommerce`"
-        class="object-cover h-full z-0"
-      />
-    </div>
   </div>
 </template>
 <script setup lang="ts">
@@ -102,6 +95,6 @@ const router = useRouter();
 const submit = () => {
   console.log("username:", username.value);
   console.log("password:", password.value);
-  router.push('/profile')
+  router.push("/profile");
 };
 </script>

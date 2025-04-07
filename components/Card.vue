@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { Eye, Heart } from "lucide-vue-next";
+
 const props = defineProps<{
   url: string;
   stars: number;
@@ -9,7 +11,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="flex flex-col gap-1 w-[270px]">
+  <div class="flex flex-col gap-1 min-w-[270px]">
     <!-- image & view icon & favorite icon and addToCart btn -->
     <div
       class="bg-secondary2 group relative rounded-md overflow-hidden w-full h-[250px]"
@@ -24,12 +26,12 @@ const props = defineProps<{
           <div
             class="bg-white p-1 rounded-full w-7 justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:cursor-pointer absolute top-2 right-3"
           >
-            <IconsEyeOutline width="18" />
+            <Eye :size="18" />
           </div>
           <div
             class="bg-white p-1 rounded-full w-7 justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:cursor-pointer absolute top-10 right-3"
           >
-            <IconsHeart width="18" />
+            <Heart :size="18" />
           </div>
         </div>
       </div>
@@ -52,7 +54,9 @@ const props = defineProps<{
     <!-- new Price and old Price -->
     <div class="flex items-center gap-2">
       <h1 class="font-medium text-xs text-secondary">${{ price }}</h1>
-      <h1 class="font-normal text-xs text-gray-400 line-through">${{oldPrice}}</h1>
+      <h1 class="font-normal text-xs text-gray-400 line-through">
+        ${{ oldPrice }}
+      </h1>
     </div>
     <!-- Rating and Number of Rating -->
     <div class="flex items-center gap-2">

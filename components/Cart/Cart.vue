@@ -1,4 +1,11 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const { total , editTotal} = useCartStore()
+const totalPriceProducts =ref(2750) // change this to true price 
+onMounted(()=>{
+  editTotal(totalPriceProducts.value)
+})
+console.log(total);
+</script>
 
 <template>
   <div class="mt-16 mx-4">
@@ -58,7 +65,7 @@
         <h1 class="md:text-2xl text-lg">Cart Total</h1>
         <div class="border-b py-2 flex justify-between">
           <p class="text-lg font-light">Subtotal:</p>
-          <p class="font-light">$1750</p>
+          <p class="font-light">${{ total }}</p>
         </div>
         <div class="border-b py-2 flex justify-between">
           <p class="text-lg font-light">Shipping:</p>
@@ -66,7 +73,7 @@
         </div>
         <div class="border-b py-2 flex justify-between">
           <p class="text-lg font-light">Total:</p>
-          <p class="font-light">$1750</p>
+          <p class="font-light">${{ total }}</p>
         </div>
         <!-- btn -->
         <div class="flex justify-center">

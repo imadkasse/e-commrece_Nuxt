@@ -1,5 +1,9 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+useSeoMeta({
+  title: "About Us",
+});
+</script>
 
 <template>
-  <h1>hello about</h1>
+  <About />
 </template>

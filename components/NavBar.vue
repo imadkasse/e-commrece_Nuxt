@@ -41,8 +41,8 @@ onMounted(() => {
   <div class="border-b-2 fixed w-full top-0 z-20 bg-white">
     <div class="p-4">
       <div class="flex items-center justify-around w-full">
-        <h1 class="font-bold text-2xl">New-Branch</h1>
-
+        <h1 class="font-bold md:text-2xl text-base">New-Branch</h1>
+        <!-- menu md>hidden  -->
         <ul
           class="md:flex hidden flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0"
         >
